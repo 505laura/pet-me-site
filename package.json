@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/505laura/project-2/issues"
   },
-  "homepage": "https://github.com/505laura/project-2#readme"
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "sequelize": "^6.25.6"
+  }
 }
