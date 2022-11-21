@@ -41,7 +41,7 @@ h4 {
     width: 100%;
 };
 
-#availableFriends{
+#availableFriends {
     background-color: var(--green);
 };
 
@@ -51,10 +51,13 @@ li {
 
 #friendCards {
     margin: 0 90 0 90px;
+    display: none;
 }
 
 .card {
     align-items: center;
+    border: 0;
+    margin: 40px;
 }
 
 .card-divider {
@@ -64,7 +67,7 @@ li {
 
 
 #cardImg {
-    width: auto;
+    width: 185px;
     height: auto;
 
 }
