@@ -4,28 +4,51 @@
     background: #B7CDB9;
     padding: 0;
     margin: 0;
+    font-size: 40px;
+};
+
+#topNav {
+    height: 60px;
+    width: 100%;
+};
+
+#menuTop {
+    float: right;
 }
 
 #siteName {
     padding-left: 50px;
     font-size: 40px;
-}
+};
 
-.menuTopText {
-    font-size: 40px;
-}
 .top-list-right {
     padding: 0;
     margin: 0;
     list-style: none;
     float: right;
-}
+};
 
-#topNav {
-    height: 60px;
+#backgroundImg {
+    height: auto;
     width: 100%;
-}
+};
+
+#availableFriends{
+    background: #B7CDB9;
+};
 
 li {
     font-size: 30px;
+};
+
+.card {
+    width: 185px;
+    height: auto;
+    margin: 15 30 15 30px;
 }
+
+/* background-color: #EAE9FB; */
+
+#footer {
+    background: #B7CDB9;
+};
