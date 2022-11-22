@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection.js');
 
 class User extends Model {}
@@ -22,8 +22,8 @@ User.init(
         },
         password: {
             type: DataTypes.STRING,
-            set(value) {
-                this.setDataValue('password', hash(value));
+            validate: {
+                len: [8, 64]
             },
             allowNull: false
         },
@@ -41,13 +41,19 @@ User.init(
         },
         telephone: {
             // Add ability to add country code
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             unique: true,
             // Optional
             allowNull: true
         },
     },
     {
+        hooks: {
+            beforeCreate: async (newEmployeeData) => {
+                newEmployeeData.password = await bcrypt.hash(newEmployeeData.password, 10);
+                return newEmployeeData;
+            },
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
