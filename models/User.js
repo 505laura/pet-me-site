@@ -1,14 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
 
-class Employee extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-    }
-}
+const sequelize = require('../config/connection.js');
 
-Employee.init(
+class User extends Model {}
+
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -25,9 +21,9 @@ Employee.init(
             allowNull: false
         },
         password: {
-            type: DataTypes.STRING(64),
-            validate: {
-                len: [8, 64]
+            type: DataTypes.STRING,
+            set(value) {
+                this.setDataValue('password', hash(value));
             },
             allowNull: false
         },
@@ -52,18 +48,16 @@ Employee.init(
         },
     },
     {
-        hooks: {
-            beforeCreate: async (newEmployeeData) => {
-                newEmployeeData.password = await bcrypt.hash(newEmployeeData.password, 10);
-                return newEmployeeData;
-            },
-        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'user',
     }
-    );
-    
-    module.exports = Employee;
+);
+
+module.exports = User;
+
+// possibly only need if making appointment:
+// DOB
+// address
