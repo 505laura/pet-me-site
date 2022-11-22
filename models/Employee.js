@@ -45,7 +45,7 @@ Employee.init(
         },
         telephone: {
             // Add ability to add country code
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             unique: true,
             // Optional
             allowNull: true
@@ -62,7 +62,7 @@ Employee.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'employee'
     }
     );
     
