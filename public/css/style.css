@@ -10,23 +10,23 @@
     padding: 0;
     margin: 0;
     font-size: 40px;
-};
+}
 
 #topNav {
     height: 60px;
     width: 100%;
-};
+}
 
 #siteName {
-    padding-left: 5 0 0 30px;
-};
+    padding: 5px 0 0 30px;
+}
 
 .top-list-right {
     padding: 0;
     margin-right: 0;
     list-style: none;
     float: right;
-};
+}
 
 #topBar {
     background: var(--grey);
@@ -36,20 +36,19 @@
     height: auto;
     width: 100%;
     border: 0;
-};
+}
 
 #availableFriends {
     background-color: var(--green);
     margin-top: 100px;
-};
+}
 
 li {
     font-size: 30px;
-};
+}
 
 #friendCards {
     margin: 0 90 0 90px;
-    display: none;
 }
 
 .card {
@@ -63,7 +62,6 @@ li {
     align-content: center;
 }
 
-
 #cardImg {
     width: 185px;
     height: auto;
@@ -72,4 +70,4 @@ li {
 
 #footer {
     background: var(--green);
-};
+}
