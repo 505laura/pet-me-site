@@ -1,4 +1,6 @@
-[
+const { Pet } = require('../models');
+
+const petdata = [
   {
     "species": "Dog",
     "name": "Waffle",
@@ -21,4 +23,9 @@
     "description": "A lovely tabby cat is looking for a safe home 🐱",
     "added": "2022-11-23 20:55:28"
   }
-]
+];
+
+const seedPet = () => Pet.bulkCreate(petdata);
+
+module.exports = seedPet;
+

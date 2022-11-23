@@ -1,4 +1,6 @@
-[
+const { Employee } = require('../models');
+
+const employeedata = [
   {
     "email": "staff1@hotmail.com",
     "password": "password12345",
@@ -14,4 +16,8 @@
     "lastName": "Wright",
     "gender": "Female"
   }
-]
+];
+
+const seedEmployee = () => Employee.bulkCreate(employeedata);
+
+module.exports = seedEmployee;
