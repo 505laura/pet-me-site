@@ -1,3 +1,7 @@
 .top-bar ul {
-    background-color: #EAE9FB; 
+    background-color: #EAE9FB;
+}
+
+.menu .menu-text {
+    padding: 0;
 }

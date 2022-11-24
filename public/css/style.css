@@ -30,12 +30,15 @@
 
 #topBar {
     background: var(--grey);
+    height: 60px;
+    padding: 0 0 0 5px;
 }
 
 #backgroundImg {
     height: auto;
     width: 100%;
     border: 0;
+    padding: 0;
 }
 
 #availableFriends {
