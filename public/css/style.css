@@ -1,0 +1,76 @@
+:root {
+    --green:#B7CDB9;
+    --grey:#EAE9FB;
+}
+
+.top-nav {
+    width: 100%;
+    height: 60px;
+    background: var(--green);
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+#topNav {
+    height: 60px;
+    width: 100%;
+}
+
+#siteName {
+    padding: 5px 0 0 30px;
+}
+
+.top-list-right {
+    padding: 0;
+    margin-right: 0;
+    list-style: none;
+    float: right;
+}
+
+#topBar {
+    background: var(--grey);
+    height: 60px;
+    padding: 0 0 0 5px;
+}
+
+#backgroundImg {
+    height: auto;
+    width: 100%;
+    border: 0;
+    padding: 0;
+}
+
+#availableFriends {
+    background-color: var(--green);
+    margin-top: 100px;
+}
+
+li {
+    font-size: 30px;
+}
+
+#friendCards {
+    margin: 0 90 0 90px;
+}
+
+.card {
+    align-items: center;
+    border: 0;
+    margin: 40px;
+}
+
+.card-divider {
+    height: auto;
+    align-content: center;
+}
+
+#cardImg {
+    width: 185px;
+    height: auto;
+    padding-top: 10px;
+}
+
+#footer {
+    background: var(--green);
+}

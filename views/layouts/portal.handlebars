@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Pet Website</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <title>Pet me</title>
+  <link rel="stylesheet" type="text/css" href="/css/foundation.css" />
+  <link rel="stylesheet" type="text/css" href="/css/foundationCustomisation.css" />
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-     Portal Pet Website
-    </h1>
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
+  <!-- top nav -->
+  <div class="top-nav" id="topNav">
+    <div class="grid-x">
+      <div class="cell large-6 medium-6 align-left" id="siteName">
+        <a href="">Pet Me</a>
+      </div>
+      <div id="menuTop" class="cell large-6 medium-6">
+        <ul class="top-list-right menu align-right">
+          <li class="menuTopText"><a href="">LOGIN</a></li>
+          <li class="menuTopText"><a href="">SIGN UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- top bar -->
+  <div id="topBar" class="top-bar">
+    <div class="top-bar-right">
+      <ul class="dropdown menu data-dropdown-menu">
+        <li class="menu-text"><a href="">PETS</a></li>
+        <li class="menu-text"><a href="">GOOD READS</a></li>
+        <li class="menu-text"><a href="">ABOUT US</a></li>
+      </ul>
+    </div>
+  </div>
+
+  {{#if logged_in}}
+  <nav>
+    <button class="btn" id="logout">logout</button>
+  </nav>
+  {{/if}}
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
   {{#if logged_in}}
   <script src="/js/portal/logout.js"></script>
   {{/if}}
+  <div id="footer" class="grid-x grid-padding-x align-center">
+    <h3 class="h3">Get in touch now!</h3>
+  </div>
+
+  <script src="/public/vendor/jquery.js"></script>
+  <script src="/public/vendor/what-input.js"></script>
+  <script src="/public/vendor/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 
 </html>
