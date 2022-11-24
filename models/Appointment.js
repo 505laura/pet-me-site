@@ -1,8 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
-const Pet = require('./Pet.js');
-const User = require('./User.js');
 
 class Appointment extends Model {}
 
@@ -17,6 +15,20 @@ Appointment.init(
         date: {
             type: DataTypes.DATE,
             allowNull: false
+        },
+        pet_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pet',
+                key: 'id'
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
@@ -27,11 +39,5 @@ Appointment.init(
         modelName: 'appointment',
     }
 );
-
-Appointment.belongsTo(Pet);
-Pet.hasMany(Appointment);
-
-Appointment.belongsTo(User);
-User.hasMany(Appointment);
 
 module.exports = Appointment;
