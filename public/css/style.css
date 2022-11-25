@@ -3,18 +3,17 @@
     --grey:#EAE9FB;
 }
 
-.top-nav {
-    width: 100%;
-    height: 60px;
+#topNav {
+    /* width: 100%;
+    height: 60px; */
     background: var(--green);
     padding: 0;
     margin: 0;
     font-size: 40px;
 }
 
-#topNav {
-    height: 60px;
-    width: 100%;
+#menuTop {
+    background: var(--green);
 }
 
 #siteName {
@@ -30,8 +29,8 @@
 
 #topBar {
     background: var(--grey);
-    height: 60px;
-    padding: 0 0 0 5px;
+    width: 100%;
+    height: auto;
 }
 
 #backgroundImg {
@@ -73,4 +72,8 @@ li {
 
 #footer {
     background: var(--green);
+}
+
+#userLogin {
+    align-items: center;
 }
