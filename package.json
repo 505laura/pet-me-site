@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest tests/*.test.js",
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "start:dev": "nodemon server.js",
+    "seed": "node seeds/index.js",
+    "lint": "eslint assets config controllers models public seeds tests utils *.js"
   },
   "repository": {
     "type": "git",

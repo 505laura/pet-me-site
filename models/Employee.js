@@ -64,6 +64,6 @@ Employee.init(
         underscored: true,
         modelName: 'employee'
     }
-    );
+);
     
-    module.exports = Employee;
+module.exports = Employee;

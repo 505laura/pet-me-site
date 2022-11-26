@@ -5,17 +5,17 @@ const seedUser = require('./userData');
 const seedAppointment = require('./appointmentData');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
+    await sequelize.sync({ force: true });
 
-  await seedEmployee();
+    await seedEmployee();
 
-  await seedPet();
+    await seedPet();
 
-  await seedUser();
+    await seedUser();
 
-  await seedAppointment();
+    await seedAppointment();
 
-  process.exit(0);
+    process.exit(0);
 };
 
 seedAll();
