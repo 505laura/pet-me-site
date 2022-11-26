@@ -11,6 +11,9 @@ router.get('/:id', async(req, res) => {
         where: {id: req.params.id},
         // include: []
     });
+    if (pet == null) {
+        return res.status(404);
+    }
     res.json(pet);
 });
 
