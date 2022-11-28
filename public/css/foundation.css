@@ -3369,8 +3369,7 @@ select {
   -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  padding: 1rem;
-  background: #e6e6e6; }
+  padding: 1rem; }
   .card-divider > :last-child {
     margin-bottom: 0; }
 

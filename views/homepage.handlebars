@@ -14,39 +14,15 @@
             <h3 class="h3">Available Friends</h3>
         </div>
         <div class="grid-x grid-padding-x" id="friendCards">
-            <div class="card cell" style="width: 185px;">
-                <div class="card-divider" style="width: auto;">
-                    <p class="h4">Friend A</p>
-                </div>
-                <img id="cardImg" src="images/Puppy-As-A-Pet.jpg">
-                <!-- <div class="card-section">
-                </div> -->
+            {{#each data.pets}}
+        <div class="card cell" style="width: 185px;">
+            <div class="card-divider" style="width: auto;">
+                <img src="{{this.image}}">
             </div>
-            <div class="card cell" style="width: 185px;">
-                <div class="card-divider" style="width: auto;">
-                    <p class="h4">Friend B</p>
-                </div>
-                <img id="cardImg" src="">
-            </div>
-            <div class="card cell" style="width: 185px;">
-                <div class="card-divider" style="width: auto;">
-                    <p class="h4">Friend C</p>
-                </div>
-                <img id="cardImg" src="">
-            </div>
-            <div class="card cell" style="width: 185px;">
-                <div class="card-divider" style="width: auto;">
-                    <p class="h4">Friend D</p>
-                </div>
-                <img id="cardImg" src="">
-            </div>
-            <div class="card cell" style="width: 185px;">
-                <div class="card-divider" style="width: auto;">
-                    <p class="h4">Friend E</p>
-                </div>
-                <img id="cardImg" src="">
-            </div>
+                <p>{{this.name}}</p>
+                {{!-- <p>{{this.description}}</p> --}}
         </div>
+        {{/each}}
     </div>
 
     <!-- Previous adopter -->
@@ -54,14 +30,6 @@
         <h3 class="h3">Previous Adopter</h3>
     </div>
     <div class="grid-x grid-padding-x">
-        {{#each data.pets}}
-        <div class="card cell" style="width: 185px;">
-            <div class="card-divider" style="width: auto;">
-                <p>Adopter {{this.name}}</p>
-            </div>
-            <img id="cardImg" src="">
-        </div>
-        {{/each}}
         <div class="card cell" style="width: 185px;">
             <div class="card-divider" style="width: auto;">
                 <p class="h4">Adopter B</p>
