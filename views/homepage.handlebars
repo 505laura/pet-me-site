@@ -1,17 +1,13 @@
    <!-- background img -->
     <div >
-        <img id="backgroundImg" src="/images/group-pets-sitting-front-white-background-19571736.jpg" alt="domestic pets" width="100%" height="auto">
+        <img id="backgroundImg" src="/images/pets.png" alt="domestic pets" width="100%" height="auto">
     </div>
 
     <!-- about us  -->
     <div id="aboutUs" class="grid-x grid-padding-x align-center">
         <h3 class="h3">About Us</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet porttitor ex. Quisque fringilla orci
-            id diam auctor molestie. Aenean eget sem at metus pellentesque gravida. Maecenas sit amet leo ut ex commodo
-            molestie et sed dui. Curabitur porttitor porttitor dui eget interdum. Morbi fermentum leo odio, sit amet
-            commodo velit mattis et. Mauris fermentum interdum neque.</p>
+        <p>We are dedicated to finding suitable homes for the furry friends in our care. It's also our job to ensure you find a new best friend who will fit perfectly into your lifestyle. We would love to meet you if you're interested in meeting one of our pets and encourage you to book an appointment!</p>
     </div>
-
     <!-- Available friends  -->
     <div id="availableFriends">
         <div class="grid-x grid-padding-x align-center">
@@ -24,8 +20,6 @@
                 </div>
                 <img id="cardImg" src="images/Puppy-As-A-Pet.jpg">
                 <!-- <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
                 </div> -->
             </div>
             <div class="card cell" style="width: 185px;">
@@ -60,12 +54,14 @@
         <h3 class="h3">Previous Adopter</h3>
     </div>
     <div class="grid-x grid-padding-x">
+        {{#each data.pets}}
         <div class="card cell" style="width: 185px;">
             <div class="card-divider" style="width: auto;">
-                <p class="h4">Adopter A</p>
+                <p>Adopter {{this.name}}</p>
             </div>
             <img id="cardImg" src="">
         </div>
+        {{/each}}
         <div class="card cell" style="width: 185px;">
             <div class="card-divider" style="width: auto;">
                 <p class="h4">Adopter B</p>

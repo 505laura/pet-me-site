@@ -58,6 +58,11 @@ User.init(
                 return newUserData;
             },
         },
+        defaultScope: {
+            attributes: {
+                exclude: ['password']
+            }
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,

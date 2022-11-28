@@ -17,12 +17,16 @@
     <!-- top nav -->
         <div class="grid-x grid-padding-x" id="topNav">
                 <div class="top-bar-left cell large-6 medium-4 small-4" id="siteName">
-                    <a href="">Pet Me</a>
+                    <a href="/">Pet Me</a>
                 </div>
                 <div id="menuTop" class=" top-bar-right cell large-6 medium-4 small-4">
                     <ul class="top-list-right menu align-right">
-                        <li class="menuTopText"><a href="">LOGIN</a></li>
-                        <li class="menuTopText"><a href="">SIGN UP</a></li>
+                        {{#if logged_in}}
+                        <li class="menuTopText"><a id="logout" href="#">LOGOUT</a></li>
+                        {{else}}
+                        <li class="menuTopText"><a href="/login">LOGIN</a></li>
+                        <li class="menuTopText"><a href="/signup">SIGN UP</a></li>
+                        {{/if}}
                     </ul>
                 </div>
         </div>
@@ -54,19 +58,20 @@
         <footer>
 
         </footer>
+        --}}
 
         {{#if logged_in}}
-        <script src="/public/js/logout.js"></script>
-        {{/if}} --}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
 
         <!-- get in touch now  -->
         <div id="footer" class="grid-x grid-padding-x align-center">
             <h3 class="h3">Get in touch now!</h3>
         </div>
 
-        <script src="/public/vendor/jquery.js"></script>
-        <script src="/public/vendor/what-input.js"></script>
-        <script src="/public/vendor/foundation.min.js"></script>
+        <script src="/vendor/jquery.js"></script>
+        <script src="/vendor/what-input.js"></script>
+        <script src="/vendor/foundation.min.js"></script>
         <script>
             $(document).foundation();
         </script>

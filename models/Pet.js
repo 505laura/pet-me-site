@@ -43,11 +43,7 @@ Pet.init(
         description: { 
             type: DataTypes.STRING,
             allowNull: false
-        },
-        added: { 
-            type: DataTypes.DATE,
-            allowNull: false
-        },
+        }
     },
     {
         sequelize,
@@ -55,6 +51,7 @@ Pet.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'pet',
+        paranoid: true
     }
 );
 

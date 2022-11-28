@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Employee extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
+    async checkPassword(loginPw) {
+        return bcrypt.compare(loginPw, this.password);
     }
 }
 
@@ -58,12 +58,17 @@ Employee.init(
                 return newEmployeeData;
             },
         },
+        defaultScope: {
+            attributes: {
+                exclude: ['password']
+            }
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'employee'
     }
-    );
+);
     
-    module.exports = Employee;
+module.exports = Employee;
