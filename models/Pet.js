@@ -12,6 +12,10 @@ Pet.init(
             primaryKey: true,
             allowNull: false
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         species: {
             type: DataTypes.ENUM('Dog', 'Cat'),
             allowNull: false
