@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest tests/*.test.js --runInBand",
-    "start": "node server.js",
-    "start:dev": "nodemon server.js",
+    "start": "npm run seed && node server.js",
+    "start:dev": "nodemon --exec npm run start",
     "seed": "node seeds/index.js",
     "lint": "eslint assets config controllers models public seeds tests utils *.js"
   },
