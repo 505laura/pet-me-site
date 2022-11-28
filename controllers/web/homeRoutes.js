@@ -1,10 +1,12 @@
+const { Pet } = require('../../models');
+
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-
-        res.render('homepage', );
+        const pets = await Pet.findAll().then((pets) => pets.map((pet) => pet.dataValues));
+        res.render('homepage', {data: {pets}, logged_in: req.session.logged_in});
     } catch (err) {
         res.status(500).json(err);
     }
@@ -17,6 +19,15 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
 });
 
 module.exports = router;
