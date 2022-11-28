@@ -23,10 +23,15 @@ router.get('/:id', async(req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    const {email, password, firstName, lastName, gender, telephone} = req.body;
-    const user = await User.create({email, password, firstName, lastName, gender, telephone});
-    const id = user.getDataValue('id');
-    res.json({user_id: id});
+    try {
+        const {email, password, firstName, lastName, gender, telephone} = req.body;
+        const user = await User.create({email, password, firstName, lastName, gender, telephone});
+        const id = user.getDataValue('id');
+        return res.json({user_id: id});
+    } catch(e) {
+        console.error(e);
+        return res.status(500).send('Something went wrong!');
+    }
     // add code for if user already exists
 });
 
@@ -59,8 +64,8 @@ router.delete('/:id', async(req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
-
+        const userData = await User.findOne({ where: { email: req.body.email }, attributes: {include: ['password']}  });
+        
         if (!userData) {
             res
                 .status(400)
@@ -84,6 +89,7 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
+        console.error(err);
         res.status(400).json(err);
     }
 });
